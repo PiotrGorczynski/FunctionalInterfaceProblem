@@ -1,3 +1,5 @@
+package java;
+
 import java.math.BigDecimal;
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -25,5 +27,13 @@ public class Main
         UnaryOperator<BigDecimal> myUnaryOperator = Transformer.getUnaryOperatorImpl();
         Optional<BigDecimal> myResult = Optional.of(BigDecimal.valueOf(2.25)).map(myUnaryOperator);
         System.out.println(myResult);
+
+        MyConsumer myConsumer2 = new MyConsumer();
+
+        myConsumer2.consumeConsumer(myConsumer);
+
+        myConsumer2.consumeSupplier(mySupplier);
+
+        myConsumer2.consumeFunction(myFunction);
     }
 }
